@@ -4,9 +4,9 @@
  *
  * SPDX-License-Identifier: CC0-1.0
  *
- * ESP32-P4 USB host: QCX216 (Qualcomm VID 0x05C6) over USB
+ * ESP32-P4 USB host: Custom Controller ( VID 0x05C6) over USB
  *   1) Read USB descriptors / strings
- *   2) Open CDC-ACM (AT) and send Qualcomm RNDIS setup ATs
+ *   2) Open CDC-ACM (AT) and send Custom Controller's RNDIS setup ATs
  *   3) Start USB RNDIS host driver, wait for DHCP (NAT 192.168.10.x)
  *   4) ICMP ping connectivity check
  *
@@ -50,7 +50,7 @@
 #include "lwip/sockets.h"
 #include "lwip/netdb.h"
 
-/* QCX216 default USB IDs (usbd_proc_cb_custom.c) */
+/* Custom Controller's default USB IDs (usbd_proc_cb_custom.c) */
 #define QCX216_USB_VID                  (0x05C6)
 #define QCX216_USB_PID                  (0x9330)
 
