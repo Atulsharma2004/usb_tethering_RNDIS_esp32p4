@@ -1,0 +1,80 @@
+dependencies:
+  espressif/cmake_utilities:
+    component_hash: 05165f30922b422b4b90c08845e6d449329b97370fbd06309803d8cb539d79e3
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.1.1
+  espressif/iot_eth:
+    component_hash: 2375af94aa38438e1411a8158ceda74e89170aa5b5b502371acdef4151be2a05
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: '*'
+    - name: idf
+      require: private
+      version: '>=4.4'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.0.0
+  espressif/iot_usbh_cdc:
+    component_hash: 6b30e8eeef1a3320a3bc0c27980c62826ed134b681be6f424366f3d78c291814
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.1'
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: '*'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32s2
+    - esp32s3
+    - esp32p4
+    version: 3.0.0
+  espressif/iot_usbh_rndis:
+    component_hash: 0d91d9c79980fe0d2b59ecae9341d91852b7eb3356cc0e708f76425a3604ff5b
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: '*'
+    - name: espressif/iot_eth
+      registry_url: https://components.espressif.com
+      require: public
+      version: '*'
+    - name: espressif/iot_usbh_cdc
+      registry_url: https://components.espressif.com
+      require: public
+      version: ^3.0
+    - name: idf
+      require: private
+      version: '>=5.2'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32s2
+    - esp32s3
+    - esp32p4
+    version: 0.3.1
+  idf:
+    source:
+      type: idf
+    version: 5.5.4
+direct_dependencies:
+- espressif/iot_eth
+- espressif/iot_usbh_cdc
+- espressif/iot_usbh_rndis
+manifest_hash: 062eabcf4a044d4163d72609144d0c4a1555db5b43f492b01ddcb1f7cfe51252
+target: esp32p4
+version: 2.0.0

@@ -1,0 +1,5 @@
+## IDF Component Manager Manifest File
+dependencies:
+  espressif/iot_usbh_cdc: "*"
+  espressif/iot_usbh_rndis: "*"
+  espressif/iot_eth: "*"
